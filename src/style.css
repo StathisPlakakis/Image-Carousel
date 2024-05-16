@@ -28,6 +28,6 @@ img {
 
 .picture-frame {
   width: 140px;
-  overflow: scroll;
+  overflow: hidden;
   border: 1px solid;
 }

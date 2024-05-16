@@ -1,5 +1,5 @@
 import './style.css';
-import turnCarouselRight from './functions';
+import { turnCarouselRight, turnCarouselLeft } from './functions';
 import badgeDollar from './assets/badge-dollar.svg';
 import careerGrowth from './assets/career-growth.svg';
 import dollar from './assets/dollar.svg';
@@ -52,7 +52,12 @@ allImages.forEach((image) => {
 
 allImages[0].setAttribute('active', 'true');
 
-const button = document.querySelector('button');
-button.addEventListener('click', () => {
+const next = document.querySelector('.turnCarouselRight');
+next.addEventListener('click', () => {
   turnCarouselRight(allImages);
+});
+
+const previous = document.querySelector('.turnCarouselLeft');
+previous.addEventListener('click', () => {
+  turnCarouselLeft(allImages);
 });

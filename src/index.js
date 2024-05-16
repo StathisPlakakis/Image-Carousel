@@ -44,3 +44,10 @@ newUserSalary.src = userSalary;
 newUserSalary.style.height = '100px';
 newUserSalary.style.width = '100px';
 slides.appendChild(newUserSalary);
+
+const allImages = document.querySelectorAll('img');
+allImages.forEach(image => {
+  image.setAttribute('active', 'false')
+})
+
+allImages[0].setAttribute('active', 'true')

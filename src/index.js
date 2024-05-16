@@ -1,5 +1,5 @@
 import './style.css';
-
+import turnCarouselRight from './functions';
 import badgeDollar from './assets/badge-dollar.svg';
 import careerGrowth from './assets/career-growth.svg';
 import dollar from './assets/dollar.svg';
@@ -46,8 +46,13 @@ newUserSalary.style.width = '100px';
 slides.appendChild(newUserSalary);
 
 const allImages = document.querySelectorAll('img');
-allImages.forEach(image => {
-  image.setAttribute('active', 'false')
-})
+allImages.forEach((image) => {
+  image.setAttribute('active', 'false');
+});
 
-allImages[0].setAttribute('active', 'true')
+allImages[0].setAttribute('active', 'true');
+
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+  turnCarouselRight(allImages);
+});

@@ -33,4 +33,20 @@ function turnCarouselLeft(carousel, dots) {
   }
 }
 
-export { turnCarouselRight, turnCarouselLeft };
+function dotNavigation(dots, carousel) {
+  return function (e) {
+    dots.forEach((dot) => {
+      dot.setAttribute('active', 'false');
+    });
+    carousel.forEach((image) => {
+      image.style.display = 'none';
+      image.setAttribute('active', 'false');
+    });
+    const index = e.target.getAttribute('index');
+    dots[index].setAttribute('active', 'true');
+    carousel[index].setAttribute('active', 'true');
+    carousel[index].style.display = 'inline';
+  };
+}
+
+export { turnCarouselRight, turnCarouselLeft, dotNavigation };

@@ -1,5 +1,5 @@
 import './style.css';
-import { turnCarouselRight, turnCarouselLeft } from './functions';
+import { turnCarouselRight, turnCarouselLeft, dotNavigation } from './functions';
 import badgeDollar from './assets/badge-dollar.svg';
 import careerGrowth from './assets/career-growth.svg';
 import dollar from './assets/dollar.svg';
@@ -114,3 +114,6 @@ allImages.forEach((image) => {
 document.querySelector('.navigation-dot').setAttribute('active', 'true');
 
 const dots = document.querySelectorAll('.navigation-dot');
+dots.forEach(dot => {
+  dot.addEventListener('click', dotNavigation(dots, allImages))
+})

@@ -89,14 +89,16 @@ allImages.forEach((image, index) => {
 
 allImages[0].setAttribute('active', 'true');
 
+
+
 const next = document.querySelector('.turnCarouselRight');
 next.addEventListener('click', () => {
-  turnCarouselRight(allImages);
+  turnCarouselRight(allImages, dots);
 });
 
 const previous = document.querySelector('.turnCarouselLeft');
 previous.addEventListener('click', () => {
-  turnCarouselLeft(allImages);
+  turnCarouselLeft(allImages, dots);
 });
 
 const navigationDots = document.querySelector('.navigation-dots');
@@ -110,3 +112,5 @@ allImages.forEach((image) => {
 });
 
 document.querySelector('.navigation-dot').setAttribute('active', 'true');
+
+const dots = document.querySelectorAll('.navigation-dot');

@@ -1,5 +1,10 @@
 import './style.css';
-import { turnCarouselRight, turnCarouselLeft, dotNavigation } from './functions';
+import {
+  turnCarouselRight,
+  turnCarouselLeft,
+  dotNavigation,
+  automaticCarouselRotation,
+} from './functions';
 import badgeDollar from './assets/badge-dollar.svg';
 import careerGrowth from './assets/career-growth.svg';
 import dollar from './assets/dollar.svg';
@@ -89,8 +94,6 @@ allImages.forEach((image, index) => {
 
 allImages[0].setAttribute('active', 'true');
 
-
-
 const next = document.querySelector('.turnCarouselRight');
 next.addEventListener('click', () => {
   turnCarouselRight(allImages, dots);
@@ -114,6 +117,10 @@ allImages.forEach((image) => {
 document.querySelector('.navigation-dot').setAttribute('active', 'true');
 
 const dots = document.querySelectorAll('.navigation-dot');
-dots.forEach(dot => {
-  dot.addEventListener('click', dotNavigation(dots, allImages))
-})
+dots.forEach((dot) => {
+  dot.addEventListener('click', dotNavigation(dots, allImages));
+});
+
+setInterval(() => {
+  automaticCarouselRotation(dots, allImages);
+}, 5000);

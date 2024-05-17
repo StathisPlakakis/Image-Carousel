@@ -49,4 +49,30 @@ function dotNavigation(dots, carousel) {
   };
 }
 
-export { turnCarouselRight, turnCarouselLeft, dotNavigation };
+function automaticCarouselRotation(dots, carousel) {
+  for (let i = 0; i < carousel.length; i++) {
+    if (carousel[i].getAttribute('active') === 'true') {
+      if (i + 1 < carousel.length) {
+        turnCarouselRight(carousel, dots);
+        break;
+      } else {
+        carousel.forEach((element, index) => {
+          element.style.display = 'none';
+          element.setAttribute('active', 'false');
+          dots[index].setAttribute('active', 'false');
+        });
+        carousel[0].setAttribute('active', 'true');
+        carousel[0].style.display = 'inline';
+        dots[0].setAttribute('active', 'true');
+        break;
+      }
+    }
+  }
+}
+
+export {
+  turnCarouselRight,
+  turnCarouselLeft,
+  dotNavigation,
+  automaticCarouselRotation,
+};

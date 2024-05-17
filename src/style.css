@@ -17,6 +17,7 @@ div {
   left: calc(50% - 70px);
   width: 142px;
   overflow: hidden;
+  display: grid;
 }
 
 .slides {
@@ -32,6 +33,7 @@ img {
   width: 140px;
   overflow: hidden;
   border: 1px solid;
+  margin-bottom: 10px;
 }
 
 .navigation-dots {
@@ -40,9 +42,10 @@ img {
   justify-content: center;
   justify-items: center;
   overflow: auto;
-  grid-template-columns: repeat(auto-fill, minmax(7px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+  gap: 5px;
   max-width: 142px;
+  margin-bottom: 20px;
 }
 
 .navigation-dot {
@@ -56,4 +59,10 @@ img {
 
 .navigation-dot[active='true'] {
   background-color: black;
+}
+
+.buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
 }

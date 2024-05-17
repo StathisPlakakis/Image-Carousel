@@ -121,6 +121,31 @@ dots.forEach((dot) => {
   dot.addEventListener('click', dotNavigation(dots, allImages));
 });
 
-setInterval(() => {
-  automaticCarouselRotation(dots, allImages);
-}, 5000);
+let intervalId;
+
+function startCarousel() {
+  intervalId = setInterval(() => {
+    automaticCarouselRotation(dots, allImages);
+  }, 5000);
+}
+
+function stopCarousel() {
+  clearInterval(intervalId);
+}
+
+function handleVisibilityChange() {
+  if (document.hidden) {
+    stopCarousel();
+  } else {
+    startCarousel();
+  }
+}
+
+// Start the carousel when the script loads
+startCarousel();
+
+// Add event listener for visibility change
+document.addEventListener('visibilitychange', handleVisibilityChange);
+
+// Optionally, handle window unload event to clear the interval
+window.addEventListener('unload', stopCarousel);

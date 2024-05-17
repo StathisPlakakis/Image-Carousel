@@ -81,7 +81,6 @@ newUserSalary2.style.height = '100px';
 newUserSalary2.style.width = '100px';
 slides.appendChild(newUserSalary2);
 
-
 const allImages = document.querySelectorAll('img');
 allImages.forEach((image, index) => {
   image.setAttribute('active', 'false');
@@ -106,5 +105,8 @@ allImages.forEach((image) => {
   const position = image.getAttribute('index');
   navigationDot.setAttribute('index', position);
   navigationDot.classList.add('navigation-dot');
+  navigationDot.setAttribute('active', 'false');
   navigationDots.appendChild(navigationDot);
 });
+
+document.querySelector('.navigation-dot').setAttribute('active', 'true');

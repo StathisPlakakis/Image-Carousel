@@ -34,6 +34,17 @@ img {
   border: 1px solid;
 }
 
+.navigation-dots {
+  display: grid;
+  grid-auto-flow: row; 
+  justify-content: center;
+  justify-items: center;
+  overflow: auto;
+  grid-template-columns: repeat(auto-fill, minmax(7px, 1fr));
+  gap: 2px;
+  max-width: 142px;
+}
+
 .navigation-dot {
   width: 5px;
   height: 5px;
@@ -42,11 +53,6 @@ img {
   border-radius: 5px;
 }
 
-.navigation-dots {
-  display: grid;
-  overflow: auto;
-  grid-template-columns: repeat(auto-fill, minmax(7px, 1fr));
-  justify-content: center;
-  gap: 2px;
-  width: 142px;
+.navigation-dot[active='true'] {
+  background-color: black;
 }

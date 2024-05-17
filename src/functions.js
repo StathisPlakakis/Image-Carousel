@@ -1,4 +1,4 @@
-function turnCarouselRight(carousel) {
+function turnCarouselRight(carousel, dots) {
   for (let i = 0; i < carousel.length; i++) {
     if (
       carousel[i].getAttribute('active') === 'true' &&

@@ -45,9 +45,47 @@ newUserSalary.style.height = '100px';
 newUserSalary.style.width = '100px';
 slides.appendChild(newUserSalary);
 
+const newBadgeDollar2 = new Image();
+newBadgeDollar2.src = badgeDollar;
+newBadgeDollar2.style.height = '100px';
+newBadgeDollar2.style.width = '100px';
+slides.appendChild(newBadgeDollar2);
+
+const newCareerGrowth2 = new Image();
+newCareerGrowth2.src = careerGrowth;
+newCareerGrowth2.style.height = '100px';
+newCareerGrowth2.style.width = '100px';
+slides.appendChild(newCareerGrowth2);
+
+const newDollar2 = new Image();
+newDollar2.src = dollar;
+newDollar2.style.height = '100px';
+newDollar2.style.width = '100px';
+slides.appendChild(newDollar2);
+
+const newSackDollar2 = new Image();
+newSackDollar2.src = sackDollar;
+newSackDollar2.style.height = '100px';
+newSackDollar2.style.width = '100px';
+slides.appendChild(newSackDollar2);
+
+const newTalentAlt2 = new Image();
+newTalentAlt2.src = talentAlt;
+newTalentAlt2.style.height = '100px';
+newTalentAlt2.style.width = '100px';
+slides.appendChild(newTalentAlt2);
+
+const newUserSalary2 = new Image();
+newUserSalary2.src = userSalary;
+newUserSalary2.style.height = '100px';
+newUserSalary2.style.width = '100px';
+slides.appendChild(newUserSalary2);
+
+
 const allImages = document.querySelectorAll('img');
-allImages.forEach((image) => {
+allImages.forEach((image, index) => {
   image.setAttribute('active', 'false');
+  image.setAttribute('index', index);
 });
 
 allImages[0].setAttribute('active', 'true');
@@ -60,4 +98,13 @@ next.addEventListener('click', () => {
 const previous = document.querySelector('.turnCarouselLeft');
 previous.addEventListener('click', () => {
   turnCarouselLeft(allImages);
+});
+
+const navigationDots = document.querySelector('.navigation-dots');
+allImages.forEach((image) => {
+  const navigationDot = document.createElement('div');
+  const position = image.getAttribute('index');
+  navigationDot.setAttribute('index', position);
+  navigationDot.classList.add('navigation-dot');
+  navigationDots.appendChild(navigationDot);
 });
